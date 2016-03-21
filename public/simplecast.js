@@ -116,7 +116,7 @@ var CastPlayer = function() {
   this.mediaContents = null;
 
   this.initializeCastPlayer();
-  this.initializeLocalPlayer();
+  // this.initializeLocalPlayer();
 };
 
 /**
@@ -1202,5 +1202,5 @@ var mediaJSON = { "categories" : [ { "name" : "Movies",
             }
     ]}]};
 
- window.CastPlayer = CastPlayer;
+ window.SimplePlayer = CastPlayer;
 })();
