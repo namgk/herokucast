@@ -4,7 +4,7 @@ var express = require('express'),
     // https = require('https').createServer({key: fs.readFileSync('key.pem'),cert: fs.readFileSync('cert.pem')}, app),
     http = require('http').createServer(app);
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 9222));
 // app.set('sport', (process.env.PORT || 443));
 app.use(express.static(__dirname + '/public'));
 

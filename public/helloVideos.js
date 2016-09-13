@@ -71,7 +71,8 @@ function initializeCastApi() {
   // default app ID to the default media receiver app
   // optional: you may change it to your own app ID/receiver
   var applicationIDs = [
-      chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID
+      //"33881A30"//chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID
+	"246E0B12"
     ];
 
 
@@ -148,7 +149,7 @@ function sessionListener(e) {
   console.log('New session ID: ' + e.sessionId);
   appendMessage('New session ID:' + e.sessionId);
   session = e;
-  document.getElementById('casticon').src = CAST_ICON_THUMB_ACTIVE;
+  //document.getElementById('casticon').src = CAST_ICON_THUMB_ACTIVE;
   if (session.media.length != 0) {
     appendMessage(
         'Found ' + session.media.length + ' existing media sessions.');
@@ -236,7 +237,7 @@ function onRequestSessionSuccess(e) {
   appendMessage('session success: ' + e.sessionId);
   saveSessionID(e.sessionId);
   session = e;
-  document.getElementById('casticon').src = CAST_ICON_THUMB_ACTIVE;
+  //document.getElementById('casticon').src = CAST_ICON_THUMB_ACTIVE;
   session.addUpdateListener(sessionUpdateListener.bind(this));
   if (session.media.length != 0) {
     onMediaDiscovered('onRequestSession', session.media[0]);
@@ -352,7 +353,7 @@ function onMediaDiscovered(how, mediaSession) {
   currentMediaSession.addUpdateListener(onMediaStatusUpdate);
   mediaCurrentTime = currentMediaSession.currentTime;
   playpauseresume.innerHTML = 'Play';
-  document.getElementById('casticon').src = CAST_ICON_THUMB_ACTIVE;
+  //document.getElementById('casticon').src = CAST_ICON_THUMB_ACTIVE;
   document.getElementById('playerstate').innerHTML =
       currentMediaSession.playerState;
   if (!timer) {
